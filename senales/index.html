@@ -1,0 +1,45 @@
+$def with (f)
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Señales de transito</title>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+     crossorigin="anonymous">
+     <style type="text/css">
+img {
+width: 300px;
+height: 250px;
+margin-top: -245px;
+margin-left: -150px;
+left: 50%;
+top: 50%;
+position: absolute;
+}
+</style>
+	<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Mexico_traffic_signal_sr7.svg/1200px-Mexico_traffic_signal_sr7.svg.png" type="image/png" />
+</head>
+
+<body>
+    <div class="container bg-light ">
+		<div class="row justify-content-center mt-4 pt-4">
+			<div class="col-md-8 ">
+                <form name="main" method="post" enctype="multipart/form-data" action="">
+                    <label class="h1" for="autoSizingSelect">Busca alguna señal preventiva de transito, como esta:</label> <br>
+                    <small id="ayuda" class="form-text font-weight-bold text-danger">* SOLO FORMATO JPG.</small> <br> <br> <br> <br> <br> <br> <br> <br>
+                    <img src="https://3.bp.blogspot.com/-imttvZsil3A/XT_AfT_Iq5I/AAAAAAAALtw/1RQrd-fpBs077TAezSxNpT-ft7GDDbWbQCK4BGAYYCw/s1600/sp-28.png" alt="La cabeza y el torso de un esqueleto de dinosaurio; tiene una cabeza grande con dientes largos y afilados"
+                     
+                        title="Señal de transito 'superficie derrapante'."> 
+                        <div class="custom-file">
+<br>
+                    $:f.render() <br>
+                    <button class="btn btn-success btn-lg" type="submit">Buscar señal</button> <br> <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

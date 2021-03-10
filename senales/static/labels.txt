@@ -1,0 +1,6 @@
+0 derrumbes
+1 doble
+2 interseccion
+3 lateral
+4 peatones
+5 tope
