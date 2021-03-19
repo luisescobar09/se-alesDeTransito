@@ -52,37 +52,37 @@ class Index(object):
             prediction = model.predict(data)
 
             for i in prediction: 
-                if i[0] > 0.65:
+                if i[0] > 0.85:
                     titulo = "derrumbes"
                     resultado = "La imagen es una señal de zona de derrumbes."
                     descripcion = "Advierte sobre una zona en la cual pueden ocurrir derrumbes."
                     status = 200
 
-                elif i[1] > 0.65:
+                elif i[1] > 0.85:
                     titulo = "doble"
                     resultado = "La imagen es una señal de doble circulación."
                     descripcion = "El señalamiento se utiliza para marcar el camino de circulación en un solo sentido o en doble sentido."
                     status = 200
 
-                elif i[2] > 0.65:
+                elif i[2] > 0.85:
                     titulo = "intersección"
-                    resultado = "La imagen es una señal de intersección (entronque)."
+                    resultado = "La imagen es una señal de intersección (entronque) de 4 vías."
                     descripcion = "La línea mas ancha señalara el camino principal, mientras que la mas angosta el camino secundario."
                     status = 200
 
-                elif i[3] > 0.65:
+                elif i[3] > 0.85:
                     titulo = "lateral"
                     resultado = "La imagen es una señal de incorporación de transito."
                     descripcion = "Este tipo de señalamiento avisa sobre la incorporación de transito que va en la misma."
                     status = 200
 
-                elif i[4] > 0.65:
+                elif i[4] > 0.85:
                     titulo = "peatón"
                     resultado = "La imagen es una señal de peatón."
                     descripcion = "Indica un camino con constante paso peatonal o cruce peatonal en específico."
                     status = 200
 
-                elif i[5] > 0.65:
+                elif i[5] > 0.85:
                     titulo = "tope"
                     resultado = "La imagen es una señal de tope."
                     descripcion = "Advierte la proximidad de una protuberancia en la superficie de la vía"
@@ -91,7 +91,7 @@ class Index(object):
                 else:  
                     titulo = "error"
                     resultado = "No pudimos interpretar la imagen, intenta de nuevo."
-                    descripcion = "Error 404, not found"
+                    descripcion = "La imagen no pertenece a una señal o aún no es entrenada."
                     status = 404
         
         datos = {
