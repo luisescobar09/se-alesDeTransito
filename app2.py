@@ -5,6 +5,8 @@ import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
 import json
+from os import remove
+from os import path
 
 urls = ('/index', 'Index')
 
@@ -51,6 +53,7 @@ class Index(object):
             # run the inference
             prediction = model.predict(data)
 
+
             for i in prediction: 
                 if i[0] > 0.85:
                     titulo = "derrumbes"
@@ -93,7 +96,9 @@ class Index(object):
                     resultado = "No pudimos interpretar la imagen, intenta de nuevo."
                     descripcion = "La imagen no pertenece a una señal o aún no es entrenada."
                     status = 404
-        
+                
+                if path.exists(filedir+filename):
+                    remove(filedir+filename)
         datos = {
             titulo: [
             ]
@@ -105,6 +110,8 @@ class Index(object):
         senal["status"] = status
         datos[titulo].append(senal)
         return json.dumps(datos)
+        
+        
 
 if __name__ == "__main__":
    app = web.application(urls, globals()) 
